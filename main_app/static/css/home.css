@@ -1,9 +1,22 @@
+nav {
+  margin-top: 10px;
+}
+
 main {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   height: 100%;
+}
+
+main > section {
+  width: 100%;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .login {
@@ -15,28 +28,30 @@ main {
 }
 
 .login h1 {
-  margin: 10px 0;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  margin: 10px 0 16px 0;
 }
 
 .login > p {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 14px 0 0px;
 }
 
 .login label {
-  margin-bottom: 6px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
 }
 
 .login input {
-  padding: 2px 4px;
+  font-size: 1.2rem;
+  padding: 2px;
 }
 
 .login .btn {
   align-self: flex-end;
   margin-right: 0;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -46,10 +61,24 @@ main {
 
   main > section {
     width: 40%;
+    min-height: calc(100vh - 50px);
   }
 
   .login {
+    border: black solid 2px;
     padding: 20px;
-    width: 100%;
+    border-radius: 6px;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    margin-top: 0;
+  }
+
+  main > section {
+    padding: 0 5px;
+    min-height: calc(100vh - 57.6px);
   }
 }
