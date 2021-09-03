@@ -8,14 +8,22 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Add Article</h1>
+  {% if object %}
+    <h1>Edit Article</h1>
+  {% else %}
+    <h1>Add Article</h1>
+  {% endif %}
 </div>
 <form action="" method="post" class="form-container">
   {% csrf_token %}
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit</button>
+  {% if object %}
+    <button type="submit" class="btn submit">Save Changes</button>
+  {% else %}
+    <button type="submit" class="btn submit">Submit</button>
+  {% endif %}
 </form>
 
 {% endblock %}

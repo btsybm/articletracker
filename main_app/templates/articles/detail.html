@@ -23,6 +23,10 @@
   <div class="divs">
     <p>Notes: {{ article.notes }}</p>
   </div>
+  <div class="divs">
+      <a href="{% url 'articles_update' article.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'articles_delete' article.id %}" class="btn danger">Delete</a>
+    </div>
 </section>
 
 {% endblock %}
