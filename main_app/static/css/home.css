@@ -1,0 +1,55 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.login h1 {
+  margin: 10px 0;
+}
+
+.login > p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 14px 0 0px;
+}
+
+.login label {
+  margin-bottom: 6px;
+}
+
+.login input {
+  padding: 2px 4px;
+}
+
+.login .btn {
+  align-self: flex-end;
+  margin-right: 0;
+  margin-top: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    justify-content: space-around;
+  }
+
+  main > section {
+    width: 40%;
+  }
+
+  .login {
+    padding: 20px;
+    width: 100%;
+  }
+}
