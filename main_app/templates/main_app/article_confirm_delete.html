@@ -3,9 +3,6 @@
 
 {% block content %}
 
-{% comment %} <div class="page-header">
-  <h1>Delete Article?</h1>
-</div> {% endcomment %}
 <h2>Are you sure you want to delete {{ object.title }}?</h2>
 <a 
     href="{% url 'articles_detail' article.id %}" 
@@ -15,7 +12,6 @@
   </a>
 <form action="" method="POST" class="form">
   {% csrf_token %}
-  
   <button type="submit" >Delete</button>
 </form>
 

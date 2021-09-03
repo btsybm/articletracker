@@ -25,7 +25,7 @@ def articles_detail(request, article_id):
 
 class ArticleCreate(LoginRequiredMixin, CreateView):
   model = Article
-  fields = ['title', 'link', 'publication', 'date', 'notes']
+  fields = ['title', 'link', 'publication', 'date_published', 'notes']
   success_url = '/articles/'
 
   def form_valid(self, form):
@@ -35,7 +35,7 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
 
 class ArticleUpdate(LoginRequiredMixin, UpdateView):
   model = Article
-  fields = ['title', 'publication', 'body', 'notes']
+  fields = ['title', 'publication', 'date_published', 'body', 'notes']
 
 class ArticleDelete(LoginRequiredMixin, DeleteView):
   model = Article
