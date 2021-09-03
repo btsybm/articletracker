@@ -6,7 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.views.generic.edit import CreateView
 
 
 
@@ -23,20 +23,15 @@ def articles_detail(request, article_id):
   article = Article.objects.get(id=article_id)
   return render(request, 'articles/detail.html', { 'article': article })
 
+class ArticleCreate(LoginRequiredMixin, CreateView):
+  model = Article
+  fields = ['title', 'link', 'publication', 'date', 'notes']
+  success_url = '/articles/'
 
+  def form_valid(self, form):
+    form.instance.user = self.request.user  
+    return super().form_valid(form)
 
-# MUST UPDATE ARTICLE CREATE IN PART 8 WHEN YOU GET THERE
-# class CatCreate(CreateView):
-#   model = Cat
-#   fields = ['name', 'breed', 'description', 'age']
-  
-#   # This inherited method is called when a
-#   # valid cat form is being submitted
-#   def form_valid(self, form):
-#     # Assign the logged in user (self.request.user)
-#     form.instance.user = self.request.user  # form.instance is the cat
-#     # Let the CreateView do its job as usual
-#     return super().form_valid(form)
 
 def signup(request):
   error_message = ''
