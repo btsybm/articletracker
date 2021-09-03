@@ -20,8 +20,14 @@
   <header>
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/articles">My Articles</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="/">Home</a></li>
+          <li><a href="/articles">My Articles</a></li>
+          {% comment %} <li><a href="{% url 'articles_create' %}">Add Article</a></li> {% endcomment %}
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
+        {% else %}
+          {% comment %} <li><a href="{% url 'home' %}">Login</a></li> {% endcomment %}
+        {% endif %}
       </ul>
     </nav>
   </header>
