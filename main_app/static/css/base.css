@@ -1,13 +1,199 @@
-body {
-  background-color: rgb(224, 201, 166);
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
-  display: flex;
-  flex-direction: column;
-
-
-  align-items: center;
-
-  min-height: 100v
-  
+* {
+  font-family: "Special Elite", cursive;
 }
 
+
+body {
+  background-color: #F9F7F1;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100v;
+}
+
+header {
+  width: 100%;
+}
+
+nav {
+  margin: 10px;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+main {
+  width: 90%;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: var(--link-hover-color)
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  padding: 5px 8px;
+}
+
+.btn {
+  font-size: var(--font-l);
+  padding: 10px 10px;
+  border-radius: 2px;
+  border-width: 2px;
+  border-style: solid;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  margin-right: 10px;
+}
+
+.secondary {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn:hover {
+  background-color: var(--button-bg-hover);
+}
+
+.warn {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+
+.danger {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.page-header h1 {
+  font-size: var(--font-xxl);
+  margin: 0;
+}
+
+.page-header img {
+  height: 40px;
+  margin-left:15px;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    align-items: center;
+  }
+
+  main {
+    max-width: 1300px;
+    min-height: calc(100vh - 53px);
+  }
+
+  nav,
+  .header-logo-container {
+    margin: 10px 0;
+    padding: 0 15px;
+  }
+
+  .header-logo-container {
+    padding-top: 3px;
+  }
+
+  nav {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
+  }
+
+  .header-logo-container {
+    width: 213px;
+  }
+
+  .page-header h1 {
+    font-size: var(--font-xtreme);
+  }
+  
+  .page-header img {
+    height: 50px;
+    margin-left:20px;
+  }
+  
+  .page-header img:first-of-type {
+    margin-left: 25px;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    header {
+      background: var(--nav-bg);
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1024px) {
+  main {
+    min-height: calc(100vh - 55px);
+  }
+  
+  header {
+    margin: 20px 20px 0 20px;
+    width: calc(100vw - 40px);
+    max-width: 1920px;
+    top: 20px;
+    background-color: transparent;
+    border-bottom: none;
+  }
+
+  nav,
+  .header-logo-container {
+    margin: 0;
+    background: var(--nav-bg-ff);
+    border: var(--borders);
+    border-radius: 18px;
+  }
+
+  nav {
+    margin-left: auto;
+  }
+
+  .header-logo-container {
+    /* visual fix to help align logo */
+    padding-top: 6px;
+    width: 256px;
+    height: 35px;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    header {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+
+  }
+}

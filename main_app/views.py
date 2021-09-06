@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-# from django.http import HttpResponse
 from .models import Article
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
@@ -7,6 +6,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from bs4 import BeautifulSoup
+from bs4.element import Comment
+import urllib.request
 
 
 
@@ -29,8 +31,27 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
   success_url = '/articles/'
 
   def form_valid(self, form):
-    form.instance.user = self.request.user  
+    form.instance.user = self.request.user 
+
+    # form.instance.body = 
     return super().form_valid(form)
+
+
+  # def tag_visible(element):
+  #   if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
+  #     return False
+  #   if isinstance(element, Comment):
+  #     return False
+  #   return True
+
+  # def text_from_html(body):
+  #   soup = BeautifulSoup(body, 'html.parser')
+  #   texts = soup.findAll(text=True)
+  #   visible_texts = filter(tag_visible, texts)  
+  #   return u" ".join(t.strip() for t in visible_texts)
+
+  # article.body = text_from_html(urllib.request.urlopen({{ article.link }}).read())
+
 
 
 class ArticleUpdate(LoginRequiredMixin, UpdateView):
@@ -40,8 +61,6 @@ class ArticleUpdate(LoginRequiredMixin, UpdateView):
 class ArticleDelete(LoginRequiredMixin, DeleteView):
   model = Article
   success_url = '/articles/'
-
-
 
 def signup(request):
   error_message = ''

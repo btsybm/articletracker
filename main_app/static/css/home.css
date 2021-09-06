@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+* {
+  font-family: "Special Elite", cursive;
+}
+
+
 nav {
   margin-top: 10px;
 }
