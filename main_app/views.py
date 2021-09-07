@@ -25,6 +25,22 @@ def articles_detail(request, article_id):
   article = Article.objects.get(id=article_id)
   return render(request, 'articles/detail.html', { 'article': article })
 
+
+
+
+def tag_visible(element):
+  if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
+    return False
+  if isinstance(element, Comment):
+    return False
+  return True
+
+def text_from_html(article):
+  soup = BeautifulSoup(article, 'html.parser')
+  texts = soup.findAll(text=True)
+  visible_texts = filter(tag_visible, texts)  
+  return u" ".join(t.strip() for t in visible_texts)
+
 class ArticleCreate(LoginRequiredMixin, CreateView):
   model = Article
   fields = ['title', 'link', 'publication', 'date_published', 'notes']
@@ -33,24 +49,12 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
   def form_valid(self, form):
     form.instance.user = self.request.user 
 
-    # form.instance.body = 
+    form.instance.body = text_from_html(urllib.request.urlopen(form.instance.link).read())
+
     return super().form_valid(form)
 
 
-  # def tag_visible(element):
-  #   if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
-  #     return False
-  #   if isinstance(element, Comment):
-  #     return False
-  #   return True
 
-  # def text_from_html(body):
-  #   soup = BeautifulSoup(body, 'html.parser')
-  #   texts = soup.findAll(text=True)
-  #   visible_texts = filter(tag_visible, texts)  
-  #   return u" ".join(t.strip() for t in visible_texts)
-
-  # article.body = text_from_html(urllib.request.urlopen({{ article.link }}).read())
 
 
 

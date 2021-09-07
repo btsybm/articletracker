@@ -4,10 +4,17 @@
   font-family: "Special Elite", cursive;
 }
 
-
 body {
-  background-color: #F9F7F1;
-  
+  background-color: #f9f7f1;
+
+
+  background: url("https://i.imgur.com/oa8UWgv.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +47,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--link-hover-color)
+  color: var(--link-hover-color);
 }
 
 nav ul {
@@ -92,7 +99,7 @@ nav li {
 
 .page-header img {
   height: 40px;
-  margin-left:15px;
+  margin-left: 15px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -136,12 +143,12 @@ nav li {
   .page-header h1 {
     font-size: var(--font-xtreme);
   }
-  
+
   .page-header img {
     height: 50px;
-    margin-left:20px;
+    margin-left: 20px;
   }
-  
+
   .page-header img:first-of-type {
     margin-left: 25px;
   }
@@ -155,12 +162,11 @@ nav li {
   }
 }
 
-
 @media only screen and (min-width: 1024px) {
   main {
     min-height: calc(100vh - 55px);
   }
-  
+
   header {
     margin: 20px 20px 0 20px;
     width: calc(100vw - 40px);
@@ -194,6 +200,5 @@ nav li {
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
     }
-
   }
 }
