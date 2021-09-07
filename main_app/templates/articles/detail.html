@@ -14,20 +14,28 @@
 <section>
   <div class="divs">
     <h1>{{ article.title }}</h1>
-    <h3>from {{ article.publication }}</h3>
-    <h4>published on {{ article.date_published }}</h4>
-    <h5>Added on {{ article.date_added }}</h5>
+    <h3>{{ article.publication }}</h3>
+    <h3>{{ article.date_published }}</h3>
   </div>
+  <hr>
   <div class="divs">
-    <p>Article Text: {{ article.body }}</p>
+    <h4>Notes:</h4>
+    <p>{{ article.notes }}</p>
   </div>
+<hr>  
   <div class="divs">
-    <p>Notes: {{ article.notes }}</p>
+    <h4>Article:</h4>
+    <p class="articlebody">{{ article.body }}</p>
   </div>
-  <div class="divs">
+  <div class="divs" id='editbutton'>
       <a href="{% url 'articles_update' article.id %}" class="btn warn">Edit</a>
       <a href="{% url 'articles_delete' article.id %}" class="btn danger">Delete</a>
-    </div>
+  </div>
+  <div class="divs" id="printurl">
+    <h5>Added on {{ article.date_added }}</h5>
+    <h5>{{ article.link }}</h5>
+  </div>
+
 </section>
 
 {% endblock %}
