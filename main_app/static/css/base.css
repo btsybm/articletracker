@@ -1,20 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
-
 * {
-  font-family: "Special Elite", cursive;
+  font-family: 'Droid Serif', serif;
+  color: #2F2F2F;
 }
 
 body {
-  background-color: #f9f7f1;
-
-
-  background: url("https://i.imgur.com/oa8UWgv.png") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-
+  background-color: #F9F7F1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +17,7 @@ header {
 
 nav {
   margin: 10px;
+  background-color: #F9F7F1;
 }
 
 ul {
@@ -168,11 +159,11 @@ nav li {
   }
 
   header {
-    margin: 20px 20px 0 20px;
+    margin: 0px 20px 0 20px;
     width: calc(100vw - 40px);
     max-width: 1920px;
     top: 20px;
-    background-color: transparent;
+    background-color: #F9F7F1;
     border-bottom: none;
   }
 

@@ -9,8 +9,8 @@ class Article(models.Model):
   publication = models.CharField(max_length=100, blank=True)
   date_added = models.DateTimeField('Date added', auto_now_add=True)
   date_published = models.DateField('Date published')
-  body = models.TextField(max_length=5000, default='', blank=True)
-  notes = models.TextField(max_length=3000, default='', blank=True)
+  body = models.TextField(max_length=60000, default='', blank=True)
+  notes = models.TextField(max_length=30000, default='', blank=True)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):

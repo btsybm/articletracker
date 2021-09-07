@@ -1,24 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
 * {
-  font-family: "Special Elite", cursive;
+  font-family: 'Droid Serif', serif;
 }
 
-.card-container {
-  padding: 0 30px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+h1 {
+  text-align: center;
 }
 
-.card {
-  width: 275px;
-  margin: 10px;
-}
+table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:30px auto;
+	}
 
-.card-content {
-  padding: 10px;
-  width: 100%;
-  border: 3px solid black;
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #F9F7F1; 
+	}
+
+th { 
+	background: #2F2F2F; 
+	color: #F9F7F1; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
 }
 
