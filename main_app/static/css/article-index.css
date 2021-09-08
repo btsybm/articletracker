@@ -7,12 +7,12 @@ h1 {
   text-align: center;
   font-family: 'Playfair Display SC', serif;
   font-style: italic;
-  font-size: 4em;
-
+  font-size: 3.5em;
+  margin-bottom: 0px;
 }
 
 table { 
-	width: 750px; 
+	max-width: 900px; 
 	border-collapse: collapse; 
 	margin:30px auto;
 	}

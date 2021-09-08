@@ -71,6 +71,7 @@ td > textarea {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
 }
 
 a {
@@ -95,4 +96,8 @@ a {
   text-align: right;
   padding-top: 3px;
   padding-bottom: 3px;
+}
+
+#signupheader {
+  font-size: 2em;
 }
