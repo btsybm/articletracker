@@ -9,10 +9,12 @@
 {% block content %}
 
 <h2 class="confirmation">Are you sure you want to delete {{ object.title }}?</h2>
-<a href="{% url 'articles_detail' article.id %}" class="btn secondary"><button>Cancel</button> </a>
-<form action="" method="POST" class="form">
-  {% csrf_token %}
-  <button type="submit" >Delete</button>
-</form>
-
+<div id="deletebutton" >
+  <a href="{% url 'articles_detail' article.id %}" class="btn warn">Cancel</a>
+  <form action="" method="POST" class="form">
+    {% csrf_token %}
+    <button type="submit" class="btn warn">Delete</button>
+  </form>
+<div>
 {% endblock %}
+
