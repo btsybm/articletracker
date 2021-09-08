@@ -8,7 +8,7 @@ I often bookmark articles that I like but wanted a better way to organize them a
 ### Instructions: 
 After creating an account, add an article along with any notes to reference later.
 ## Screenshot:
-![Screenshot 1](https://i.imgur.com/uUUGRl3.png)
+![Screenshot 1](https://i.imgur.com/Q09gdTu.png)
 ![Screenshot 2](https://i.imgur.com/uUUGRl3.png)
 ![Screenshot 3](https://i.imgur.com/JesWlL0.png)
 ## Technologies Used:
