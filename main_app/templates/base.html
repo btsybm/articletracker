@@ -23,18 +23,19 @@
 </head>
 <body>
   <header>
+    {% if user.is_authenticated %}
+    <div>
+      <h1 id="logo">NOTEWORTHY</h1>
+    </div>
     <nav>
       <ul>
-        {% if user.is_authenticated %}
-          {% comment %} <li><a href="{% url 'home' %}">Home</a></li> {% endcomment %}
           <li><a href="{% url 'articles_index' %}">My Articles</a></li>
           <li><a href="{% url 'articles_create' %}">Add Article</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>
-        {% else %}
-          {% comment %} <li><a href="{% url 'home' %}">Login</a></li> {% endcomment %}
-        {% endif %}
       </ul>
     </nav>
+    {% else %}
+    {% endif %}
   </header>
   <main>
     {% block content %}

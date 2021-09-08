@@ -7,19 +7,15 @@ h1 {
   text-align: center;
   font-family: 'Playfair Display SC', serif;
   font-style: italic;
-  font-size: 3.5em;
+  font-size: 3em;
   margin-bottom: 0px;
+  margin-top: 70px;
 }
 
 table { 
 	max-width: 900px; 
 	border-collapse: collapse; 
 	margin:30px auto;
-	}
-
-/* Zebra striping */
-tr:nth-of-type(odd) { 
-	background: #F9F7F1; 
 	}
 
 th { 
@@ -57,9 +53,9 @@ only screen and (max-width: 760px),
 	
 	td { 
 		border: none;
-		border-bottom: 1px solid #eee; 
+		border-bottom: 1px solid rgba(238, 238, 238, 0.836); 
 		position: relative;
-		padding-left: 50%; 
+		/* padding-left: 50%;  */
 	}
 
 	td:before { 
@@ -74,6 +70,5 @@ only screen and (max-width: 760px),
 		color: #000;
 		font-weight: bold;
 	}
-
 }
 

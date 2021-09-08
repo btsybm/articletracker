@@ -48,8 +48,8 @@ td > textarea {
 .heading {
   font-family: "Playfair Display SC", serif;
   font-style: italic;
-  font-size: 4em;
-  margin-bottom: 40px;
+  font-size: 3em;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
