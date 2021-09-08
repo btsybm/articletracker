@@ -1,0 +1,11 @@
+.confirmation {
+  display: flex;
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+  /* font-style: italic; */
+  font-size: 1.8em;
+  margin-top: 3em;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+
+}

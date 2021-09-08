@@ -1,4 +1,3 @@
-
 * {
   font-family:'Droid Serif', serif;
 }
@@ -38,6 +37,14 @@ main > section {
   margin: 10px 0 16px 0;
 }
 
+.heading {
+  font-family: "Playfair Display SC", serif;
+  font-style: italic;
+  font-size: 5em;
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+
 .login > p {
   display: flex;
   flex-direction: column;
@@ -71,7 +78,7 @@ main > section {
   }
 
   .login {
-    border: black solid 2px;
+    border: #2F2F2F solid 2px;
     padding: 20px;
     border-radius: 6px;
   }

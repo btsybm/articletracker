@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/confirm-delete.css' %}"/>
+{% endblock %}
+
 {% block content %}
 
-<h2>Are you sure you want to delete {{ object.title }}?</h2>
-<a 
-    href="{% url 'articles_detail' article.id %}" 
-    class="btn secondary"
-  >
-    <button>Cancel</button> 
-  </a>
+<h2 class="confirmation">Are you sure you want to delete {{ object.title }}?</h2>
+<a href="{% url 'articles_detail' article.id %}" class="btn secondary"><button>Cancel</button> </a>
 <form action="" method="POST" class="form">
   {% csrf_token %}
   <button type="submit" >Delete</button>

@@ -9,18 +9,21 @@
 
 <h1>
   {% if object %}
-    <h1>Edit Article</h1>
+    <h1 class="heading">Edit Article</h1>
   {% else %}
-    <h1>Add Article</h1>
+    <h1 class="heading">Add Article</h1>
   {% endif %}
 </h1>
 <form action="" method="post" class="form-container">
   {% csrf_token %}
-  <table>
+  <table class="editform">
     {{ form.as_table }}
   </table>
   {% if object %}
-    <button type="submit" class="btn submit">Save Changes</button>
+  <div class="divs" id='savebutton'>
+      <a href="{% url 'articles_detail' article.id %}" class="btn warn">Cancel</a>
+      <button type="submit"  class="btn warn">Save Changes</button>
+  </div>
   {% else %}
     <button type="submit" class="btn submit">Submit</button>
   {% endif %}

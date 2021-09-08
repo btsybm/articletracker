@@ -6,13 +6,14 @@
 {% endblock %}
 
 {% block content %}
-
+{% comment %} 
 <section>
-  <h1>ARTICLE TRACKER</h1>
-</section>
+  <h1 class="heading">NOTEWORTHY</h1>
+</section> {% endcomment %}
 
 {% if not user.is_authenticated %}
   <section>
+  <h1 class="heading">NOTEWORTHY</h1>
     <form action="{% url 'home' %}" method="post" class="login">
       <h1>Login</h1>
       {% csrf_token %}
@@ -20,8 +21,8 @@
       <input type="hidden" name="next" value="{{ next }}">
       <button type="submit" class="btn submit">Login</button>
     </form>
-    <h4><a href="{% url 'signup' %}">Not a user? Sign up here.</a></h4>
+    <h4>Don't have an account? Sign up <a href="{% url 'signup' %}"> here.</a></h4>
   </section>
 {% endif %}
 
-{% endblock %}
+{% endblock %} 

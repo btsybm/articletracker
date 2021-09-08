@@ -5,7 +5,10 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 100%;
+  margin-right: 0px;
+  line-height: 1.8;
+
 }
 
 table {
@@ -40,4 +43,56 @@ td > textarea {
 .btn {
   align-self: flex-end;
   margin-right: 40px;
+}
+
+.heading {
+  font-family: "Playfair Display SC", serif;
+  font-style: italic;
+  font-size: 4em;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.signUpForm {
+  width: 100%;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+#previousAccount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+a {
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-container {
+    width: 95%;
+  }
+  
+}
+
+@media only screen and (min-width: 1024px) {
+  .form-container {
+    width: 95%;
+  }
+}
+
+#savebutton {
+  margin-top: 3px;
+  text-align: right;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
