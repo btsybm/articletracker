@@ -11,7 +11,6 @@ from bs4.element import Comment
 import urllib.request
 
 
-
 class Home(LoginView):
   template_name = 'home.html'
 
@@ -24,8 +23,6 @@ def articles_index(request):
 def articles_detail(request, article_id):
   article = Article.objects.get(id=article_id)
   return render(request, 'articles/detail.html', { 'article': article })
-
-
 
 
 def tag_visible(element):
@@ -44,19 +41,12 @@ def text_from_html(article):
 class ArticleCreate(LoginRequiredMixin, CreateView):
   model = Article
   fields = ['title', 'link', 'publication', 'date_published', 'notes']
-  success_url = '/articles/'
+  # success_url = '/articles/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user 
-
     form.instance.body = text_from_html(urllib.request.urlopen(form.instance.link).read())
-
     return super().form_valid(form)
-
-
-
-
-
 
 class ArticleUpdate(LoginRequiredMixin, UpdateView):
   model = Article

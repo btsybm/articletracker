@@ -18,7 +18,7 @@ After creating an account, add an article along with any notes to reference late
 * CSS
 * Beautiful Soup
 ## Attributions:
-* David Stinson for the CSS bones (https://www.linkedin.com/in/david-stinson/)
+* David Stinson for the CSS foundation (https://www.linkedin.com/in/david-stinson/)
 * Ben, David N., and Blake for being tolerant sounding boards
 ## Next Steps:
 * Be able to sort articles by date, title and publication
