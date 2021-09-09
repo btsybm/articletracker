@@ -41,7 +41,6 @@ def text_from_html(article):
 class ArticleCreate(LoginRequiredMixin, CreateView):
   model = Article
   fields = ['title', 'link', 'publication', 'date_published', 'notes']
-  # success_url = '/articles/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user 

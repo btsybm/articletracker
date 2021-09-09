@@ -16,6 +16,7 @@ After creating an account, add an article along with any notes to reference late
 * Django
 * HTML
 * CSS
+* PostgreSQL
 * Beautiful Soup
 ## Attributions:
 * David Stinson for the CSS foundation (https://www.linkedin.com/in/david-stinson/)
